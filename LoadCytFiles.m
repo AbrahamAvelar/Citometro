@@ -34,6 +34,7 @@ for i=1:length(tubos)
         BgDataAll(i).dat = datos(1:size(datos),:);
         BgDataAll(i).info= info;
         BgDataAll(i).meta= metad;
+        BgDataAll(i).filename=tubos(i).name;
     end
 
 end
