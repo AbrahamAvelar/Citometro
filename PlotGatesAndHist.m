@@ -12,12 +12,12 @@ function [ h ] = PlotGatesAndHist(BgDataAll, GateArray1, GateArray2, x, y, z)
 for i=1:length(BgDataAll)%6:8%1:length(BgDataAll)
     figure(i)
     a=size(BgDataAll(i).dat);
-    if a(2)==10
+    if a(2)>=max([x,y,z])%es un control de calidad de cuántos parámetros tiene el fcs
 
         [NewData gated] = GatingMouse(BgDataAll(i).dat, x,y,BgDataAll(1).info(x).Name,BgDataAll(1).info(y).Name, 'log','log', 0,GateArray1);
         [NewData ungated] = GatingMouse(BgDataAll(i).dat, x,y,BgDataAll(1).info(x).Name,BgDataAll(1).info(y).Name, 'log','log',0, GateArray2);
         
-        tam=min(length(gated), length(ungated));%es para que sean del mismo tama�o los dos histogramas
+        tam=min(length(gated), length(ungated));%es para que sean del mismo tamaño los dos histogramas
         
         subplot(1,2,1) %SCATTER PLOT DE X/Y CON SUS GATES, ESCALA LOGARITMICA
         plot(BgDataAll(i).dat(:,x),BgDataAll(i).dat(:,y),'ok','MarkerSize',1)
@@ -60,6 +60,8 @@ for i=1:length(BgDataAll)%6:8%1:length(BgDataAll)
         HistLine(center2, heigth2, 'b')
         xlim([0 8])
         ylim([0 max([heigth1 heigth2])+30])        
+    else
+        warning('El número de parámetros que indicaste es menor a los que contiene el .fcs, ver "PlotGatesandHist" line 18')
     end
 end
 
