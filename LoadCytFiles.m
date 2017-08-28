@@ -2,6 +2,10 @@ function [BgDataAll] = LoadCytFiles(Reader)
 % Descarga los .fcs que esten en la carpeta actual en una sola estructura
 % Reader = 1 usar el lector viejito que sacamos del github de MSpringer lab
 % si no dice nada, entonces usa el fca_readfcs que es que que ya usabamos
+%
+% Funciones que necesita:
+% fca_readfcs % que lee los archivos del citometro nuevo
+% fcsread % From MikeSpringerLab github que lee los archivos de citometro viejo
 
 tubos=dir('*.fcs*'); %Nombre del plato que se quiera extraer
 
