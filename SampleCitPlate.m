@@ -1,4 +1,9 @@
 function [sampledData] = SampleCitPlate( PL, FieldName, samplesize )
+% SampleCitPlate( PL, FieldName, samplesize )
+% PL is the plate(s) to sample from
+% FieldName is a string with the name of the field that contains the subfield .dat
+% samplesize is how many events you want per well
+
 
 sampledData=[];
 FieldName2=fieldnames(PL.( str2mat(FieldName))) ;
