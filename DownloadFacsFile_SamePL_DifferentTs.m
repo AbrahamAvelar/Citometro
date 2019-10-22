@@ -1,8 +1,7 @@
-%% DESCARGA LOS DATOS DE UN SOLO PLATO
+%% DESCARGA LOS DATOS DE UN PLATO
 clear
 cd 'C:\Users\JAbraham\Dropbox\PhD\Experimentos (ExMonth15)\EMMayJun16\Folder_001\Experiment_008\' %Ponerse en el folder que tiene los Fcs
-platos=dir('*PL1*'); %Nombre del plato que se quiera extraer
-plato=4;
+platos=dir('*PL1*'); %Nombre del plato que se quiera extraer. Es una cadena de texto que tienen en comùn todas las carpetas que provienen del mismo plato/tratamiento, por ejemplo 'PL1', 'no_aireacion', 'metformina', etc
 length(platos)
 for i=1:length(platos)
     x=tic; i %para saber cuanto lleva
