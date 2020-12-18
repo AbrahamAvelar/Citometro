@@ -38,7 +38,8 @@ end
 % if filename arg. only contain PATH, set the default dir to this
 % before issuing the uigetfile command. This is an option for the "fca"
 % tool
-[FilePath, FileNameMain, fext, fversn] = fileparts(filename);
+%[FilePath, FileNameMain, fext, fversn] = fileparts(filename);
+[FilePath, FileNameMain, fext] = fileparts(filename); % en algunas versiones de matlab fileparts da 3 outputs.
 FilePath = [FilePath filesep];
 FileName = [FileNameMain, fext];
 if  isempty(FileNameMain)
